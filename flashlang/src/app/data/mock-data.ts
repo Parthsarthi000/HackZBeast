@@ -1,4 +1,4 @@
-// Mock data for the FlashLan application
+// Mock data for the Flash Lang application
 
 export interface Flashcard {
   id: number;

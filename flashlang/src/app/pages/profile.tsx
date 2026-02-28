@@ -224,7 +224,7 @@ export function Profile() {
             {!extensionConnected && (
               <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <p className="text-sm text-blue-900 mb-2">
-                  Install the FlashLan browser extension to automatically create flashcards
+                  Install the Flash Lang browser extension to automatically create flashcards
                   from text you highlight while reading online.
                 </p>
                 <Button size="sm" className="bg-[#3B82F6] hover:bg-[#2563EB] text-white">

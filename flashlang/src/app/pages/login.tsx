@@ -25,7 +25,7 @@ export function Login() {
             <div className="bg-gradient-to-r from-[#3B82F6] to-[#14B8A6] p-3 rounded-xl">
               <Zap className="size-8 text-white" />
             </div>
-            <span className="font-bold text-3xl text-gray-900">FlashLan</span>
+            <span className="font-bold text-3xl text-gray-900">Flash Lang</span>
           </div>
         </div>
 
