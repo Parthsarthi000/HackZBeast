@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "word": "bonjour",
+    "translation": "hello",
+    "example": "Bonjour, comment allez-vous?",
+    "partOfSpeech": "interjection",
+    "status": "learning"
+  },
+  {
+    "id": 2,
+    "word": "bibliothèque",
+    "translation": "library",
+    "example": "Je vais à la bibliothèque pour étudier.",
+    "partOfSpeech": "noun",
+    "status": "new"
+  },
+  {
+    "id": 3,
+    "word": "merci",
+    "translation": "thank you",
+    "example": "Merci beaucoup pour votre aide!",
+    "partOfSpeech": "interjection",
+    "status": "mastered"
+  }
+]

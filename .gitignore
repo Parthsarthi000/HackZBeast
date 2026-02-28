@@ -1,0 +1,15 @@
+# Env and secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies and build
+node_modules/
+.venv/
+__pycache__/
+dist/
+*.pyc
+
+# IDE / OS
+.idea
+.DS_Store

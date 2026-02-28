@@ -1,0 +1,27 @@
+{
+  "id": 1,
+  "title": "A Day at the Market",
+  "content": "It was a beautiful Saturday morning when Marie decided to visit the **marché** (market). The sun was shining brightly, and the air was filled with the **arôme** (aroma) of fresh bread and flowers.\n\nAs she walked through the bustling **allée** (aisle), she admired the colorful displays of fruits and vegetables. \"**Bonjour**!\" (Hello!) called out a friendly vendor, his smile as warm as the morning sun.\n\nMarie approached a stall filled with **tomates** (tomatoes), **carottes** (carrots), and **pommes** (apples). \"How much for these beautiful tomatoes?\" she asked in French. \"**Trois euros**\" (Three euros), replied the vendor, carefully placing the fresh produce in a paper bag.\n\nNext, she visited the **boulangerie** (bakery) section. The smell of freshly baked **pain** (bread) and **croissants** was irresistible. She purchased a warm baguette and a few pastries for breakfast.\n\nAs Marie continued her **promenade** (stroll), she encountered a flower vendor selling beautiful **fleurs** (flowers). She chose a bouquet of **roses** (roses) and **tulipes** (tulips) to brighten her apartment.\n\nThe market was alive with **conversations** (conversations) in French, creating a symphony of sounds. Marie felt grateful for this **expérience** (experience), which allowed her to practice her language skills while enjoying the local culture.\n\nWith her bags full of fresh produce and treats, Marie headed home, already looking forward to her next market **aventure** (adventure).",
+  "vocabularyWords": [
+    { "word": "marché", "translation": "market", "count": 3 },
+    { "word": "arôme", "translation": "aroma", "count": 1 },
+    { "word": "allée", "translation": "aisle", "count": 1 },
+    { "word": "bonjour", "translation": "hello", "count": 1 },
+    { "word": "tomates", "translation": "tomatoes", "count": 2 },
+    { "word": "carottes", "translation": "carrots", "count": 1 },
+    { "word": "pommes", "translation": "apples", "count": 1 },
+    { "word": "trois euros", "translation": "three euros", "count": 1 },
+    { "word": "boulangerie", "translation": "bakery", "count": 1 },
+    { "word": "pain", "translation": "bread", "count": 1 },
+    { "word": "croissants", "translation": "croissants", "count": 1 },
+    { "word": "promenade", "translation": "stroll", "count": 1 },
+    { "word": "fleurs", "translation": "flowers", "count": 2 },
+    { "word": "roses", "translation": "roses", "count": 1 },
+    { "word": "tulipes", "translation": "tulips", "count": 1 },
+    { "word": "conversations", "translation": "conversations", "count": 1 },
+    { "word": "expérience", "translation": "experience", "count": 1 },
+    { "word": "aventure", "translation": "adventure", "count": 1 }
+  ],
+  "readingTime": "3 min read",
+  "level": "Beginner"
+}

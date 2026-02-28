@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "A Day at the Market",
+    "description": "Learn food and shopping vocabulary through a vibrant market scene",
+    "readingTime": "3 min",
+    "level": "Beginner",
+    "vocabularyCount": 12,
+    "image": "https://images.unsplash.com/photo-1768722688414-27b8220b18d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJrZXQlMjBzY2VuZSUyMHRyYXZlbHxlbnwxfHx8fDE3NzIyNTQwMjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "tags": ["Food", "Shopping"]
+  },
+  {
+    "id": 2,
+    "title": "Morning Routine",
+    "description": "Practice daily activity vocabulary through a typical morning",
+    "readingTime": "4 min",
+    "level": "Beginner",
+    "vocabularyCount": 15,
+    "image": "https://images.unsplash.com/photo-1769398449496-2414ea88b441?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWZlJTIwY29mZmVlJTIwbW9ybmluZ3xlbnwxfHx8fDE3NzIyNTQwMjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "tags": ["Daily Life", "Routine"]
+  },
+  {
+    "id": 3,
+    "title": "The Library Visit",
+    "description": "Explore education and learning vocabulary in a library setting",
+    "readingTime": "5 min",
+    "level": "Intermediate",
+    "vocabularyCount": 18,
+    "image": "https://images.unsplash.com/photo-1662582631700-676a217d511f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaWJyYXJ5JTIwYm9va3MlMjBzaGVsdmVzfGVufDF8fHx8MTc3MjE1NTgzMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "tags": ["Education", "Reading"]
+  },
+  {
+    "id": 4,
+    "title": "Weekend Adventure",
+    "description": "Learn travel and outdoor vocabulary through an exciting weekend trip",
+    "readingTime": "6 min",
+    "level": "Intermediate",
+    "vocabularyCount": 20,
+    "image": "https://images.unsplash.com/photo-1686984096026-23d6e82f9749?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBzdHVkeWluZyUyMGxhcHRvcHxlbnwxfHx8fDE3NzIxODE2OTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "tags": ["Travel", "Adventure"]
+  }
+]

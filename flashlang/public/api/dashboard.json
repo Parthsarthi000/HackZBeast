@@ -1,0 +1,37 @@
+{
+  "user": {
+    "name": "Alex",
+    "streak": 7,
+    "wordsThisWeek": 25
+  },
+  "stats": {
+    "totalFlashcards": 47,
+    "storiesAvailable": 12,
+    "quizzesCompleted": 8
+  },
+  "dailyGoal": {
+    "current": 8,
+    "target": 10
+  },
+  "recentWords": [
+    { "word": "bonjour", "translation": "hello", "language": "French" },
+    { "word": "bibliothèque", "translation": "library", "language": "French" },
+    { "word": "merci", "translation": "thank you", "language": "French" }
+  ],
+  "recommendations": [
+    {
+      "id": 1,
+      "title": "A Day at the Market",
+      "type": "Story",
+      "description": "Practice your food vocabulary",
+      "tag": "Beginner"
+    },
+    {
+      "id": 2,
+      "title": "Travel Essentials",
+      "type": "Quiz",
+      "description": "Test your travel phrases",
+      "tag": "Intermediate"
+    }
+  ]
+}

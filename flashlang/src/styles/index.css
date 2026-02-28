@@ -1,0 +1,8 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Custom styles for flashcard 3D flip effect */
+.perspective-1000 {
+  perspective: 1000px;
+}

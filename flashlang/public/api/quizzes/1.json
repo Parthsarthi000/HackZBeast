@@ -1,0 +1,42 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What does \"bonjour\" mean in English?",
+      "options": ["Goodbye", "Hello", "Thank you", "Please"],
+      "correctAnswer": "Hello",
+      "explanation": "\"Bonjour\" is the standard French greeting meaning \"hello\" or \"good day\"."
+    },
+    {
+      "id": 2,
+      "type": "fill-blank",
+      "question": "How do you say \"thank you\" in French?",
+      "correctAnswer": "merci",
+      "explanation": "\"Merci\" is the French word for \"thank you\"."
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "question": "What does \"bibliothèque\" mean?",
+      "options": ["Bookstore", "Library", "School", "Office"],
+      "correctAnswer": "Library",
+      "explanation": "\"Bibliothèque\" means \"library\" in French, a place to borrow books."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "question": "What is the correct translation of \"market\"?",
+      "options": ["Marché", "Magasin", "Boutique", "Centre"],
+      "correctAnswer": "Marché",
+      "explanation": "\"Marché\" is the French word for \"market\"."
+    },
+    {
+      "id": 5,
+      "type": "fill-blank",
+      "question": "Complete: \"Une belle ______\" (A beautiful adventure)",
+      "correctAnswer": "aventure",
+      "explanation": "\"Aventure\" means \"adventure\" in French."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "title": "Market Vocabulary",
+    "description": "Test your knowledge of market and shopping terms",
+    "questions": 10,
+    "difficulty": "Beginner",
+    "completed": true,
+    "score": 85,
+    "progress": 100
+  },
+  {
+    "id": 2,
+    "title": "Daily Routines",
+    "description": "Practice common phrases for everyday activities",
+    "questions": 12,
+    "difficulty": "Beginner",
+    "completed": false,
+    "progress": 60
+  },
+  {
+    "id": 3,
+    "title": "Travel Essentials",
+    "description": "Master essential travel vocabulary and phrases",
+    "questions": 15,
+    "difficulty": "Intermediate",
+    "completed": true,
+    "score": 92,
+    "progress": 100
+  },
+  {
+    "id": 4,
+    "title": "Food & Dining",
+    "description": "Learn restaurant and food-related vocabulary",
+    "questions": 10,
+    "difficulty": "Beginner",
+    "completed": false,
+    "progress": 0
+  }
+]
