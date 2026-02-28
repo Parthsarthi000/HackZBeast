@@ -1,9 +1,7 @@
-/** Backend API base URL. Never use relative URL so production always hits Railway. */
-const envUrl = import.meta.env.VITE_API_URL;
-const isProd = import.meta.env.PROD;
-export const API_BASE =
-  typeof envUrl === "string" && envUrl.trim() !== ""
-    ? envUrl.trim().replace(/\/$/, "")
-    : isProd
-      ? "https://hackzbeast-production.up.railway.app"
-      : "http://localhost:8000";
+/**
+ * Backend API base URL. Production uses Railway (no env var) so Netlify won't flag "exposed secrets".
+ * For local dev we use localhost.
+ */
+export const API_BASE = import.meta.env.PROD
+  ? "https://hackzbeast-production.up.railway.app"
+  : "http://localhost:8000";
