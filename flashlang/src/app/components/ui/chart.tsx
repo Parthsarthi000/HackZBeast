@@ -112,35 +112,22 @@ type TooltipPayloadItem = {
   color?: string;
 };
 
-function ChartTooltipContent(props: React.ComponentProps<"div"> & {
-  active?: boolean;
-  payload?: unknown;
-  label?: string;
-  labelFormatter?: (value: unknown, payload: TooltipPayloadItem[]) => React.ReactNode;
-  labelClassName?: string;
-  formatter?: (value: unknown, name: string, item: TooltipPayloadItem, index: number, payload: unknown) => React.ReactNode;
-  color?: string;
-  hideLabel?: boolean;
-  hideIndicator?: boolean;
-  indicator?: "line" | "dot" | "dashed";
-  nameKey?: string;
-  labelKey?: string;
-}) {
-  const {
-    active,
-    payload: rawPayload,
-    className,
-    indicator = "dot",
-    hideLabel = false,
-    hideIndicator = false,
-    label,
-    labelFormatter,
-    labelClassName,
-    formatter,
-    color,
-    nameKey,
-    labelKey,
-  } = props;
+function ChartTooltipContent(
+  props: Record<string, unknown> & { className?: string; active?: boolean; payload?: unknown; label?: string; labelFormatter?: unknown; labelClassName?: string; formatter?: unknown; color?: string; hideLabel?: boolean; hideIndicator?: boolean; indicator?: "line" | "dot" | "dashed"; nameKey?: string; labelKey?: string }
+) {
+  const active = props.active as boolean | undefined;
+  const rawPayload = props.payload;
+  const className = props.className as string | undefined;
+  const indicator = (props.indicator as "line" | "dot" | "dashed") ?? "dot";
+  const hideLabel = props.hideLabel as boolean | undefined ?? false;
+  const hideIndicator = props.hideIndicator as boolean | undefined ?? false;
+  const label = props.label as string | undefined;
+  const labelFormatter = props.labelFormatter as ((value: unknown, payload: TooltipPayloadItem[]) => React.ReactNode) | undefined;
+  const labelClassName = props.labelClassName as string | undefined;
+  const formatter = props.formatter as ((value: unknown, name: string, item: TooltipPayloadItem, index: number, payload: unknown) => React.ReactNode) | undefined;
+  const color = props.color as string | undefined;
+  const nameKey = props.nameKey as string | undefined;
+  const labelKey = props.labelKey as string | undefined;
   const payload = Array.isArray(rawPayload) ? (rawPayload as TooltipPayloadItem[]) : [];
   const { config } = useChart();
 
@@ -195,14 +182,14 @@ function ChartTooltipContent(props: React.ComponentProps<"div"> & {
     >
       {!nestLabel ? tooltipLabel : null}
       <div className="grid gap-1.5">
-        {payload.map((item, index) => {
+        {payload.map((item: TooltipPayloadItem, index: number) => {
           const key = `${nameKey || item.name || item.dataKey || "value"}`;
           const itemConfig = getPayloadConfigFromPayload(config, item, key);
           const indicatorColor = color || (item.payload && "fill" in item.payload ? item.payload.fill : undefined) || item.color;
 
           return (
             <div
-              key={item.dataKey ?? key ?? index}
+              key={(item.dataKey ?? key ?? index) as string}
               className={cn(
                 "[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5",
                 indicator === "dot" && "items-center",
@@ -268,13 +255,12 @@ const ChartLegend = RechartsPrimitive.Legend;
 
 type LegendPayloadItem = { value?: string; dataKey?: string; color?: string };
 
-function ChartLegendContent(props: React.ComponentProps<"div"> & {
-  payload?: unknown;
-  verticalAlign?: "top" | "bottom";
-  hideIcon?: boolean;
-  nameKey?: string;
-}) {
-  const { className, hideIcon = false, payload: rawPayload, verticalAlign = "bottom", nameKey } = props;
+function ChartLegendContent(props: Record<string, unknown> & { className?: string; payload?: unknown; verticalAlign?: "top" | "bottom"; hideIcon?: boolean; nameKey?: string }) {
+  const className = props.className as string | undefined;
+  const rawPayload = props.payload;
+  const verticalAlign = (props.verticalAlign as "top" | "bottom") ?? "bottom";
+  const nameKey = props.nameKey as string | undefined;
+  const hideIcon = (props.hideIcon as boolean) ?? false;
   const payload = Array.isArray(rawPayload) ? (rawPayload as LegendPayloadItem[]) : [];
   const { config } = useChart();
 
