@@ -1,6 +1,5 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { BookOpen, CreditCard, FileText, User, Menu, Zap } from "lucide-react";
-import { Button } from "../components/ui/button";
 import { useState } from "react";
 
 export function RootLayout() {
