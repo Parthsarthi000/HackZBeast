@@ -1,0 +1,11 @@
+# Netlify config for flashlang (use Base directory: flashlang in Netlify UI)
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA: serve index.html for all routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
