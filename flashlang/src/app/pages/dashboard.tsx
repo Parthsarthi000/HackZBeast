@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { CreditCard, BookOpen, FileText, Target, TrendingUp, Flame, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Progress } from "../components/ui/progress";
+import { API_BASE } from "../config";
 
 /** Expected JSON shape from GET /api/dashboard (or VITE_API_URL/api/dashboard) */
 export interface DashboardApiResponse {
@@ -19,8 +20,6 @@ export interface DashboardApiResponse {
     tag: string;
   }[];
 }
-
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
 function mapDashboardResponse(data: DashboardApiResponse) {
   const statsConfig: {

@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "../components/ui/select";
 import { toast } from "sonner";
+import { API_BASE } from "../config";
 
 /** Expected JSON from GET /api/flashcards: array of flashcard items */
 export interface FlashcardApiItem {
@@ -22,8 +23,6 @@ export interface FlashcardApiItem {
   partOfSpeech: string;
   status: "new" | "learning" | "mastered";
 }
-
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
 export function Flashcards() {
   const [searchQuery, setSearchQuery] = useState("");

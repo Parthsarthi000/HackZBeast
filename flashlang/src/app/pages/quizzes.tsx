@@ -5,6 +5,7 @@ import { Play, CheckCircle2, Circle, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Progress } from "../components/ui/progress";
 import { toast } from "sonner";
+import { API_BASE } from "../config";
 
 /** Expected JSON from GET /api/quizzes: array of quiz items */
 export interface QuizApiItem {
@@ -17,8 +18,6 @@ export interface QuizApiItem {
   score?: number;
   progress: number;
 }
-
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
 export function Quizzes() {
   const [quizzes, setQuizzes] = useState<QuizApiItem[]>([]);

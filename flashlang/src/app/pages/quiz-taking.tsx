@@ -5,6 +5,7 @@ import { ArrowLeft, Check, X, ArrowRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Progress } from "../components/ui/progress";
 import { Input } from "../components/ui/input";
+import { API_BASE } from "../config";
 
 export interface QuizQuestionApiItem {
   id: number;
@@ -19,8 +20,6 @@ export interface QuizQuestionApiItem {
 export interface QuizDetailApiResponse {
   questions: QuizQuestionApiItem[];
 }
-
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
 const DEFAULT_QUESTIONS: QuizQuestionApiItem[] = [
   {

@@ -11,6 +11,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../components/ui/tooltip";
+import { API_BASE } from "../config";
 
 /** Expected JSON from GET /api/stories/:id */
 export interface StoryDetailApiResponse {
@@ -21,8 +22,6 @@ export interface StoryDetailApiResponse {
   readingTime?: string;
   level?: string;
 }
-
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
 const DEFAULT_STORY: StoryDetailApiResponse = {
   id: 1,

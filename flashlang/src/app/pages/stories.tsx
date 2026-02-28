@@ -5,6 +5,7 @@ import { Clock, BookOpen, Tag, Sparkles } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { toast } from "sonner";
+import { API_BASE } from "../config";
 
 /** Expected JSON from GET /api/stories: array of story items */
 export interface StoryApiItem {
@@ -17,8 +18,6 @@ export interface StoryApiItem {
   image: string;
   tags: string[];
 }
-
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
 
 export function Stories() {
   const [stories, setStories] = useState<StoryApiItem[]>([]);
