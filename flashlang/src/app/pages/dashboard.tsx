@@ -73,7 +73,17 @@ export function Dashboard() {
         return res.json() as Promise<DashboardApiResponse>;
       })
       .then((json) => {
-        if (!cancelled) setData(mapDashboardResponse(json));
+        if (!cancelled) {
+          if (import.meta.env.DEV) {
+            console.log("[Dashboard] API:", `${API_BASE}/api/dashboard`, "Response:", {
+              user: (json as DashboardApiResponse).user,
+              stats: (json as DashboardApiResponse).stats,
+              recentWordsCount: ((json as DashboardApiResponse).recentWords ?? []).length,
+              recommendationsCount: ((json as DashboardApiResponse).recommendations ?? []).length,
+            });
+          }
+          setData(mapDashboardResponse(json as DashboardApiResponse));
+        }
       })
       .catch((err) => {
         if (!cancelled) {
@@ -92,6 +102,11 @@ export function Dashboard() {
 
   const { stats, recentWords, recommendations, user, dailyGoal, goalPercent, remaining } = data;
   const recentWordsToShow = recentWords.slice(0, 4);
+  const isEmpty =
+    !error &&
+    stats.every((s) => s.value === 0) &&
+    recentWords.length === 0 &&
+    recommendations.length === 0;
 
   if (loading) {
     return (
@@ -106,6 +121,12 @@ export function Dashboard() {
       {error && (
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800 text-sm">
           {error} — showing default data. Set VITE_API_URL and ensure GET /api/dashboard returns JSON.
+        </div>
+      )}
+      {isEmpty && !error && (
+        <div className="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-lg text-amber-800 text-sm">
+          No data yet. Run the backend seed (<code className="bg-amber-100 px-1 rounded">python -m seed_data</code> in{" "}
+          <code className="bg-amber-100 px-1 rounded">fastapi-backend</code>) or add flashcards / generate stories in the app.
         </div>
       )}
       {/* Welcome Section */}

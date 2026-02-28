@@ -26,12 +26,15 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# CORS: allow localhost for dev + Vercel (set CORS_ORIGINS on Render, e.g. https://your-app.vercel.app)
-_cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000")
+# CORS: allow any localhost port (dev 5173, preview/build 4173, etc.) and CORS_ORIGINS for production.
+_cors_origins = os.getenv("CORS_ORIGINS", "")
 _cors_list = [o.strip() for o in _cors_origins.split(",") if o.strip()]
+# Regex: allow http://localhost:<port> and http://127.0.0.1:<port> so build on 4173 and dev on 5173 both work
+_origin_regex = r"http://(localhost|127\.0\.0\.1)(:\d+)?"
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_cors_list,
+    allow_origin_regex=_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -79,13 +82,13 @@ async def list_stories(request: Request):
     return [
         {
             "id": r["id"],
-            "title": r["title"],
-            "description": r["description"],
-            "readingTime": r["reading_time"],
-            "level": r["level"],
-            "vocabularyCount": r["vocabulary_count"],
-            "image": r["image"],
-            "tags": r["tags"] or [],
+            "title": (r["title"] or ""),
+            "description": (r["description"] or ""),
+            "readingTime": str(r["reading_time"]) if r["reading_time"] is not None else "0",
+            "level": (r["level"] or "Beginner"),
+            "vocabularyCount": int(r["vocabulary_count"]) if r["vocabulary_count"] is not None else 0,
+            "image": (r["image"] or ""),
+            "tags": r["tags"] if isinstance(r["tags"], list) else ([] if r["tags"] is None else [r["tags"]]),
         }
         for r in rows
     ]
@@ -158,13 +161,13 @@ async def list_quizzes(request: Request):
     return [
         {
             "id": r["id"],
-            "title": r["title"],
-            "description": r["description"],
-            "questions": r["questions"],
-            "difficulty": r["difficulty"],
-            "completed": r["completed"],
-            "score": r["score"],
-            "progress": r["progress"],
+            "title": (r["title"] or ""),
+            "description": (r["description"] or ""),
+            "questions": int(r["questions"]) if r["questions"] is not None else 0,
+            "difficulty": (r["difficulty"] or "Beginner"),
+            "completed": bool(r["completed"]) if r["completed"] is not None else False,
+            "score": int(r["score"]) if r["score"] is not None else None,
+            "progress": int(r["progress"]) if r["progress"] is not None else 0,
         }
         for r in rows
     ]
@@ -224,11 +227,11 @@ async def get_flashcards(request: Request):
     return [
         {
             "id": r["id"],
-            "word": r["word"],
-            "translation": r["translation"],
-            "example": r["example"],
-            "partOfSpeech": r["part_of_speech"],
-            "status": r["status"],
+            "word": r["word"] or "",
+            "translation": r["translation"] or "",
+            "example": r["example"] or "",
+            "partOfSpeech": r["part_of_speech"] or "noun",
+            "status": (r["status"] or "new") if (r["status"] in ("new", "learning", "mastered")) else "new",
         }
         for r in rows
     ]
@@ -317,15 +320,25 @@ async def get_profile(request: Request):
             """
         )
     if not row:
-        raise HTTPException(status_code=404, detail="No user found")
+        return {
+            "name": "Guest",
+            "email": "",
+            "targetLanguage": "Japanese",
+            "dailyGoal": "10",
+            "extensionConnected": False,
+            "totalWords": 0,
+            "storiesRead": 0,
+            "quizzesPassed": 0,
+            "currentStreak": 0,
+        }
     return {
         "name": row["name"],
-        "email": row["email"],
-        "targetLanguage": row["target_language"],
-        "dailyGoal": str(row["daily_goal"]),
-        "extensionConnected": row["extension_connected"],
-        "totalWords": row["total_words"],
-        "storiesRead": row["stories_read"],
-        "quizzesPassed": row["quizzes_passed"],
-        "currentStreak": row["current_streak"],
+        "email": row["email"] or "",
+        "targetLanguage": row["target_language"] or "Japanese",
+        "dailyGoal": str(row["daily_goal"]) if row["daily_goal"] is not None else "10",
+        "extensionConnected": bool(row["extension_connected"]),
+        "totalWords": int(row["total_words"]) if row["total_words"] is not None else 0,
+        "storiesRead": int(row["stories_read"]) if row["stories_read"] is not None else 0,
+        "quizzesPassed": int(row["quizzes_passed"]) if row["quizzes_passed"] is not None else 0,
+        "currentStreak": int(row["current_streak"]) if row["current_streak"] is not None else 0,
     }
