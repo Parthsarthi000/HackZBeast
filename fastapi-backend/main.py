@@ -27,7 +27,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 # CORS: allow any localhost port (dev 5173, preview/build 4173, etc.) and CORS_ORIGINS for production.
-_cors_origins = os.getenv("CORS_ORIGINS", "")
+_cors_origins = os.getenv("CORS_ORIGINS", "https://flash-lang.netlify.app")
 _cors_list = [o.strip() for o in _cors_origins.split(",") if o.strip()]
 # Regex: allow http://localhost:<port> and http://127.0.0.1:<port> so build on 4173 and dev on 5173 both work
 _origin_regex = r"http://(localhost|127\.0\.0\.1)(:\d+)?"
