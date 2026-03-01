@@ -6,6 +6,8 @@ What sets Flash Lang apart is its complementary browser extension — a seamless
 
 Most language apps teach you in isolation. Flash Lang puts you in the world. By combining structured SRS learning with organic, real-world immersion, Flash Lang aims to 10x your language acquisition — not by making you study more, but by making everything you do online count as study.
 
+**→ [Try Flash Lang](https://flash-lang.netlify.app)** (live on Netlify)
+
 ---
 
 ## What’s in this repo
